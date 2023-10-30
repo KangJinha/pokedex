@@ -1,0 +1,35 @@
+@charset "UTF-8";
+.menubar {
+    width: 100%;
+    padding: 1rem;
+    position: fixed;
+    background-color: #FFCB05;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    z-index: 5;
+}
+.topbar {
+    height: 50px;
+}
+
+.menu-bar_ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.menu-bar_ul > li {
+    /*position: relative;*/
+    display: inline-block;
+}
+.menu-bar_ul > li a {
+    text-align: center;
+    padding: 0 2rem;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+.menu-bar_ul > li a:hover {
+    /*color: #597812;*/
+    color: #3564AD;
+    font-weight: normal;
+}

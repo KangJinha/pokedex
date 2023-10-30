@@ -1,0 +1,75 @@
+@charset "UTF-8";
+:root {
+    --green: rgba(125, 195, 55, 0.8);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: auto;
+    width: 30vw;
+    font-family: "Nanum Pen Script", cursive;
+    background-image: url(../images/4pokemon.jpg);
+    background-size: cover;
+}
+.welcome_header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    color: white;
+}
+.welcome_header-title {
+    margin-bottom: 20px;
+    font-size: 4rem;
+}
+.welcome_header-text {
+    font-size: 1.8rem;
+    width: 60%;
+}
+
+#login_form {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 30px;
+}
+
+#login_form input {
+    border: none;
+    padding: 15px 0px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* #login_form input:not([type="submit"]) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+} */
+
+#login_form input::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+#login_form input[type="submit"] {
+    background-color: var(--green);
+    color: white;
+    cursor: pointer;
+    padding: 15px 0px;
+    border-radius: 5px;
+}
+#login_form input[type="submit"]:hover {
+    scale: 1.005;
+}
+
+#login_form a {
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.2);
+}

@@ -23,8 +23,8 @@
                                 <a href="<%=request.getContextPath() %>">Pokemon</a>
                             </li>
                             <li>
-                                <a href="<%=request.getContextPath() %>/views/board.jsp">
-                                    Board
+                                <a href="<%=request.getContextPath() %>/noticeList.do">
+                                    Notice
                                 </a>
                             </li>
                             <%if(loginMember==null){ %>

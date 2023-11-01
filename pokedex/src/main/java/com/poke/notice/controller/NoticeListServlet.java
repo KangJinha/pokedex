@@ -16,13 +16,13 @@ import com.poke.notice.model.service.NoticeService;
  * Servlet implementation class NoticeList
  */
 @WebServlet("/noticeList.do")
-public class NoticeList extends HttpServlet {
+public class NoticeListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public NoticeList() {
+    public NoticeListServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

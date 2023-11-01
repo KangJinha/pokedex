@@ -6,7 +6,7 @@
 %>    
 <%@ include file="/views/common/header.jsp"%>
  <style>
-    section#notice-container{width:600px; margin:0 auto; text-align:center;}
+    section#notice-container{width:600px; margin:20px auto; text-align:center;}
     section#notice-container h2{margin:10px 0;}
     table#tbl-notice{width:100%; margin:0 auto; border:1px solid black; border-collapse:collapse;}
     table#tbl-notice th, table#tbl-notice td {border:1px solid; padding: 5px 0; text-align:center;}
@@ -16,6 +16,9 @@
     table#tbl-notice .title:hover{
     	background-color:lime;
     }
+    button {
+		background-color: yellow;
+	}
 </style>
 <section id="notice-container">
         <h2>공지사항</h2>

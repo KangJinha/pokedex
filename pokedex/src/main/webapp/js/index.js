@@ -3,7 +3,7 @@ const buttonsHeader = document.querySelectorAll(".btn-header");
 
 let URL = "https://pokeapi.co/api/v2/pokemon/";
 let URL2 = "https://pokeapi.co/api/v2/pokemon-species/";
-let pokeHead = 9;
+let pokeHead = 27;
 
 for (let i = 1; i <= pokeHead; i++) {
     fetch(URL + i)

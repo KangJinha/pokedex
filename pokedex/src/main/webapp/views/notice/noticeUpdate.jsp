@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="/views/common/header.jsp"%>
+<%@ include file="/views/common/header.jsp" %>
 <style>
     section#notice-container{width:600px; margin:30px auto; text-align:center;}
     section#notice-container h2{margin:10px 0;}
@@ -31,10 +31,10 @@
         </tr>
         <tr>
             <th colspan="2">
-                <input type="submit" value="등록하기" onclick="">
+                <input type="submit" value="수정하기" onclick="">
             </th>
         </tr>
     </table>
     </form>
 </section>
-<%@ include file="/views/common/footer.jsp"%>
+<%@ include file="/views/common/footer.jsp" %>

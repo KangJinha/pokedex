@@ -87,12 +87,30 @@ public class NoticeDao {
 			pstmt=conn.prepareStatement(sql.getProperty("selectNoticeCount"));
 			rs=pstmt.executeQuery();
 			if(rs.next()) result=rs.getInt(1);
-		}catch(SQLException e) {
+		} catch(SQLException e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close(rs);
 			close(pstmt);
-		}return result;
+		} return result;
+	}
+	
+	public int updateNotice(Connection conn, Notice n) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		try {
+			pstmt= conn.prepareStatement(sql.getProperty("updateNotice"));
+			pstmt.setString(1, n.getNoticeTitle());
+			pstmt.setString(2, n.getNoticeWriter());
+			pstmt.setString(3, n.getNoticeContent());
+			pstmt.setString(4, n.getFilePath());
+			pstmt.setInt(5, n.getNoticeNo());
+			result = pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+		} return result;
 	}
 	
 	private Notice getNotice(ResultSet rs) throws SQLException{

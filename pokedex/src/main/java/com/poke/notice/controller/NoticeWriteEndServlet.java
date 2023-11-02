@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
+
 import com.poke.notice.model.dto.Notice;
 import com.poke.notice.model.service.NoticeService;
 
@@ -29,6 +31,12 @@ public class NoticeWriteEndServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		if(!ServletFileUpload.isMultipartContent(request)) {
+			System.out.println("잘못된 접근입니다.");
+		} else {
+			//1. 파일을 저장할 위치를 절대경로로 가져오기
+		}
 		String title = request.getParameter("title");
 		String writer = request.getParameter("writer");
 		String file = request.getParameter("upfile");

@@ -40,8 +40,13 @@
         </tr>
         <tr>
             <th colspan="2">
+            <%if(loginMember!=null&&loginMember.getMemberId().equals("admin")){ %>
                 <input type="button" value="수정하기" onclick="location.href='<%=request.getContextPath()%>/notice/noticeUpdate.do'">
                 <input type="button" value="삭제하기" onclick="">
+            <%} else {%>
+            	<input type="button" value="수정하기" onclick="alert('권한이 없습니다.');">
+                <input type="button" value="삭제하기" onclick="alert('권한이 없습니다.');">
+            <%} %>
             </th>
         </tr>
     </table>
@@ -50,6 +55,7 @@
 	$("#download-container").click(e=>{
 		location.assign("<%=request.getContextPath()%>/filedownload.do?fname=<%=n.getFilePath()%>")
 	});
+	
 </script>
 
 <%@ include file="/views/common/footer.jsp"%>

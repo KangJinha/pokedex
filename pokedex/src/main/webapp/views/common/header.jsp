@@ -34,6 +34,16 @@
                             <li>
                                 <a href="<%=request.getContextPath() %>/join.do">Join</a>
                             </li>
+                            <%}else if(loginMember.getMemberId().equals("admin")) {%>
+                            <li>
+                                <a href="<%=request.getContextPath() %>/update.do">Editprofile</a>
+                            </li>
+                            <li>
+                                <a href="<%=request.getContextPath() %>/logout.do">Logout</a>
+                            </li>
+                            <li>
+                                <a href="<%=request.getContextPath() %>/adminpage.do">AdminPage</a>
+                            </li>
                             <%} else {%>
                             <li>
                                 <a href="<%=request.getContextPath() %>/update.do">Editprofile</a>

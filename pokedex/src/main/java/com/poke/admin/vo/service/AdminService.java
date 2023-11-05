@@ -26,5 +26,11 @@ public class AdminService {
 		close(con);
 		return result;
 	}
+	public List<Member> selectMemberNickname(String key, int cPage, int numPerpage){
+		Connection con = getConnection();
+		List<Member> result = dao.selectMemberNickname(con, key, cPage, numPerpage);
+		close(con);
+		return result;
+	}
 	
 }

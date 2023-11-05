@@ -19,6 +19,19 @@ public class MemberService {
 	}
 	private MemberDAO dao = MemberDAO.getMemberDAO();
 	
+	public List<Member> searchMemberKeyword(String keyword){
+		Connection con = getConnection();
+		List<Member> result = dao.searchMemberKeyword(con,keyword); 
+		close(con);
+		return result;
+	}
+	public Member searchMemberById(String id){
+		Connection con = getConnection();
+		Member result = dao.searchMemberById(con, id);
+		close(con);
+		return result;
+	}
+	
 	public Member searchMemberByIdAndPw(String id, String pw){
 		Connection con = getConnection();
 		Member result = dao.searchMemberByIdAndPw(con, id, pw);

@@ -15,14 +15,16 @@
             rel="stylesheet"
         />
 </head>
+<script src="<%=request.getContextPath() %>/js/jquery-3.7.0.min.js"></script>
 <body>
 	<header class="welcome_header">
             <h1 class="welcome_header-title">회원가입</h1>
     </header>
-
+	<section>
         <form action="<%=request.getContextPath() %>/joinend.do" method="post" id="login_form">
         	<input
                 name="userId"
+                id="userId"
                 type="text"
                 placeholder="아이디"
                 maxlength="20"
@@ -47,7 +49,6 @@
                 onfocus="this.placeholder=''"
                 onblur="this.placeholder='비밀번호확인'"
             >
-            <span id="result" style="font-size: 1.5rem">비밀번호 일치여부</span>
             <input
                 name="nickName"
                 type="text"
@@ -83,8 +84,36 @@
             <input type="submit" value="회원가입" />
             <a href="#">Find POKE Account or Password</a>
         </form>
-
-        <script src="/pokemonstory/js/pwcheck.js"></script>
-        
+        <div>
+	        <span id="idduplicate">4글자 이상 입력</span>
+	        <span id="result">5글자 이상 입력</span>
+        </div>
+	</section>
+		<script src="<%=request.getContextPath() %>/js/idduplicatecheck.js"></script>
+        <script src="<%=request.getContextPath() %>/js/pwcheck.js"></script>
+        <script>
+        $("#userId").keyup(e=>{
+        	const userId = e.target.value;
+        	if(userId.length>=4){
+        		$.get("<%=request.getContextPath()%>/join/idduplicatecheck.do?userId="+userId,
+        			data=>{
+        				console.log(data);
+        				let msg ="", cl="";
+        				$("#idduplicate").removeClass("success fail");
+        				if(data=='true'){
+        					msg="사용할 수 있는 아이디";
+        					cl="success";
+        				} else{
+        					msg="사용할 수 없는 아이디";
+        					cl="fail";
+        				}
+        				$("#idduplicate").text(msg).addClass(cl);
+        			}
+        		)
+        	} else {
+				$("#idduplicate").html("4글자 이상 입력").removeClass("success fail");
+			}
+        })
+        </script>
 </body>
 </html>

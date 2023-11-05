@@ -11,6 +11,7 @@ body {
     background-image: url(../images/4pokemon.jpg);
     background-size: cover;
 }
+
 .welcome_header {
     text-align: center;
     display: flex;
@@ -27,8 +28,29 @@ body {
     font-size: 1.8rem;
     width: 60%;
 }
-
+section{
+	display: flex;
+	width: 32vw;
+}
+section>div{
+	display: flex;
+	flex-direction: column;
+	width: 20vw;
+	color: black;
+	font-size: 1.2rem;
+	font-weight: 600;
+}
+section>div>span{
+	width: 150px;
+	height: 50px;
+	padding: 12px;
+	margin-bottom: 40px;
+	background-color: rgba(255, 255, 255,0.7);
+	border-radius: 5px;
+	text-align: center;
+}
 #login_form {
+	width: 40vw;
     display: flex;
     flex-direction: column;
     margin: 0px 30px;
@@ -71,4 +93,11 @@ body {
     font-size: 1rem;
     margin-bottom: 10px;
     color: rgba(255, 255, 255, 0.2);
+}
+
+.success{
+	color: cornflowerblue;
+}
+.fail{
+	color: tomato;
 }

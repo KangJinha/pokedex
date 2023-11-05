@@ -1,5 +1,6 @@
 package com.poke.notice.model.service;
 import static com.poke.common.JDBCTemplate.*;
+
 import java.sql.Connection;
 import java.util.List;
 

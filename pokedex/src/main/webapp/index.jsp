@@ -170,4 +170,5 @@
                     </div>
                 </main>
             </section>
+            <script src="<%=request.getContextPath() %>/js/index.js"></script>
 <%@ include file="/views/common/footer.jsp" %>

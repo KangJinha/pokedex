@@ -19,7 +19,7 @@ const passwordCheck = document.getElementById("userPwCheck");
 		$result.style.color = color;
 		$submit.disabled = result;
 	} else {
-		$result.innerText = "";
+		$result.innerText = "5글자이상 입력";
 		$submit.disabled = true;
 	}
 	

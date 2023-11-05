@@ -30,7 +30,7 @@ public class NoticeDao {
 		ResultSet rs=null;
 		List<Notice> result=new ArrayList<>();
 		try {
-			pstmt=conn.prepareCall(sql.getProperty("selectNotice"));
+			pstmt=conn.prepareStatement(sql.getProperty("selectNotice"));
 			pstmt.setInt(1, (cPage-1)*numPerpage+1);
 			pstmt.setInt(2, cPage*numPerpage);
 			rs=pstmt.executeQuery();

@@ -28,7 +28,7 @@
             <input
                 name="userId"
                 type="text"
-                placeholder="Email or phone number"
+                placeholder="ID"
                 maxlength="20"
                 onfocus="this.placeholder=''"
                 onblur="this.placeholder='Email or phone number'"
@@ -36,7 +36,7 @@
             <input
                 name="userPw"
                 type="password"
-                placeholder="password"
+                placeholder="PASSWORD"
                 maxlength="13"
                 onfocus="this.placeholder=''"
                 onblur="this.placeholder='password'"

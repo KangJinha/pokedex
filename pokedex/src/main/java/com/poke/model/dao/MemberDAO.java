@@ -35,7 +35,45 @@ public class MemberDAO {
 		if(memberdao == null) memberdao = new MemberDAO();
 		return memberdao;
 	}
-	
+	public List<Member> searchMemberKeyword(Connection con, String keyword){
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<Member> members = new ArrayList<>();
+		try {
+			pstmt = con.prepareStatement(sql.getProperty("searchMemberKeyword"));
+			pstmt.setString(1, "%"+keyword+"%");
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				members.add(getMember(rs));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close(rs);
+			close(pstmt);
+		} return members;
+		
+	}
+	public Member searchMemberById(Connection con, String id) {
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		Member member = null;
+		try {
+			pstmt = con.prepareStatement(sql.getProperty("searchMemberById"));
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				member = getMember(rs);
+			}
+			
+		}catch(SQLException e){
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return member;
+	}
 	public Member searchMemberByIdAndPw(Connection con, String id, String pw) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -145,7 +183,7 @@ public class MemberDAO {
 		return result;
 	}
 	
-	private Member getMember(ResultSet rs)
+	public static Member getMember(ResultSet rs)
 			throws SQLException{
 				return Member.builder()
 						.memberId(rs.getString("member_id"))
